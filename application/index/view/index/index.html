@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1,minimum-scale=1">
+	<link rel="stylesheet" href="__PUBLIC__/css/index.css">
+	<title>向大大阳春代理商</title>
+</head>
+<body>
+	<div class="top">
+		<div class="left">
+			<h1>向大大阳春代理商</h1>
+		</div>
+		<div class="right">
+			<div class="top-btn">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+        <div class="menu">
+        	<ul>
+        		<li><a href="#">颜色</a></li>
+        		<li><a href="#">颜色</a></li>
+        		<li><a href="#">颜色</a></li>
+        		<li><a href="#">颜色</a></li>
+        		<li><a href="#">颜色</a></li>
+        	</ul>
+        </div>
+	</div>
+
+	<div class="content">
+		<div class="item">
+			<div class="box">
+				<div class="img"><img src="__PUBLIC__/img/1.jpg" alt=""></div>
+				<div class="text">
+					<div class="text-header"></div>
+					<div class="text-bottom"></div>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="box">
+				<div class="img"><img src="__PUBLIC__/img/2.jpg" alt=""></div>
+				<div class="text">
+					<div class="text-header"></div>
+					<div class="text-bottom"></div>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="box">
+				<div class="img"><img src="__PUBLIC__/img/3.jpg" alt=""></div>
+				<div class="text">
+					<div class="text-header"></div>
+					<div class="text-bottom"></div>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="box">
+				<div class="img"><img src="__PUBLIC__/img/4.jpg" alt=""></div>
+				<div class="text">
+					<div class="text-header"></div>
+					<div class="text-bottom"></div>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="box">
+				<div class="img"><img src="__PUBLIC__/img/5.jpg" alt=""></div>
+				<div class="text">
+					<div class="text-header"></div>
+					<div class="text-bottom"></div>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="box">
+				<div class="img"><img src="__PUBLIC__/img/9.jpg" alt=""></div>
+				<div class="text">
+					<div class="text-header"></div>
+					<div class="text-bottom"></div>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="box">
+				<div class="img"><img src="__PUBLIC__/img/7.jpg" alt=""></div>
+				<div class="text">
+					<div class="text-header"></div>
+					<div class="text-bottom"></div>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="box">
+				<div class="img"><img src="__PUBLIC__/img/8.jpg" alt=""></div>
+				<div class="text">
+					<div class="text-header"></div>
+					<div class="text-bottom"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+	<script type="text/javascript">
+
+		  var content=document.querySelector(".content");
+       var item=content.getElementsByTagName("*");
+
+      var box=app.getBox(item);
+      var arrH=[]
+      for(var i=0;i<box.length;i++){
+      	if(i<2){
+           arrH.push(box[i].offsetHeight+40)
+      	}else{
+      		box[i].style.position="absolute";
+      		var minH=Math.min.apply(null,arrH);
+
+      		var index=app.getindex(arrH,minH)
+      		box[i].style.top=minH+"px";
+      		box[i].style.left=box[index].offsetLeft+"px";
+      		arrH[index]+=box[i].offsetHeight;
+      		
+      	}
+      }
+
+      var menu=document.querySelector(".menu")
+      var li=menu.querySelectorAll("li")
+      var lih=0;
+      for(var i=0;i<li.length;i++){
+      	lih=li[i].offsetHeight;
+      }
+      menu.style.height="0px"
+  var topBtn=document.querySelector(".top-btn");
+     topBtn.onclick=function(){
+     	if(menu.style.height=="0px"){
+     		menu.style.height=lih*li.length+"px"
+     	}else{
+     		menu.style.height="0px"
+     	}
+     }
+
+	</script>
+</body>
+</html>
